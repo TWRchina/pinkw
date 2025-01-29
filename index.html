@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PINKW的网站</title>
+    <link rel="shortcut icon" href="./234.jpg" type="image/x-icon" />
+    <p id="currentDateTime">加载中...</p>  
+  
+    <script>  
+        
+        function showCurrentDateTime() {  
+            const now = new Date();  
+            const year = now.getFullYear();  
+            const month = String(now.getMonth() + 1).padStart(2, '0'); // 月份是从0开始的，所以要+1  
+            const day = String(now.getDate()).padStart(2, '0');  
+            const hours = String(now.getHours()).padStart(2, '0');  
+            const minutes = String(now.getMinutes()).padStart(2, '0');  
+            const seconds = String(now.getSeconds()).padStart(2, '0');  
+            const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;  
+            document.getElementById('currentDateTime').textContent = formattedDateTime;  
+        }  
+  
+        // 初始显示当前日期和时间  
+        showCurrentDateTime();  
+  
+        // 每秒更新一次日期和时间  
+        setInterval(showCurrentDateTime, 1000);  
+        
+    </script>  <style>
+        .www{
+            text-align: center;
+        }
+        .box1{
+            background-color: rgba(0, 0, 0, 0.442);
+           
+        } 
+        .box2{
+            padding-left: 3cm;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:link{color: white;}
+        a:visited{color: white;}
+        a:hover{color: aqua;}
+        body {
+            background-image: url('./背景图.jpg');
+            background-repeat: no-repeat;
+            background-size: cover; /* 或者使用contain */
+            background-attachment: fixed; /* 背景图片固定，不随页面滚动 */
+        }
+    </style>
+    
+</head>
+
+<body onload="startTime()">
+    <div>
+        <h4 style="color:blue;">所在地区路局</h4><img height="30" width="225" src="./img/成都.jpg"><!--<img width="50" height="50" src="./img/西南铁路.png">-->
+        
+    </div>
+    <div class="box1">
+        <div>
+            <h2 style="color: white;" >Welcome</h2>
+            <h2 style="color: white;">快捷导航></h2>
+        </div>
+        <span><div class="box2">
+            <a href="中国铁路.html"><span>| 中国铁路介绍 |</span></a>
+            <a href="中国国家铁路集团有限公司.html"target="_blank"><span>| 打开中国国家铁路集团官网 |</span></a>
+            <a href="中国铁路财产保险自保有限公司.html"target="_blank"><span>| 打开中国铁路财产保险自保有限公司官网 |</span></a>
+            <a href="http://www.95306.cn/" target="_blank"><span>| 打开95306官网 |</span></a>
+            <a href="https://www.12306.cn/index/" target="_blank"><span>| 打开铁路12306 |</span></a>
+           <a href="制作信息.html"><span>| 制作信息 |</span></a>                
+        </div></span>
+    </div>
+    <div class="box1">
+        <h1 style="color:white;text-align: center;width: 500px;">PINKW的网站</h1>
+    </div>
+    <div class="www">
+    <img width="200" height="200" src="./img/微信图片_20220812140953.jpg">
+    <img width="200" height="200" src="./img/微信图片_20220812141134.jpg">
+    <img width="200" height="200" src="./img/微信图片_20220812141139.jpg">
+    </div>
+    <div class="www"><h1 style="text-align: center;color:white">正在更新中...</h1></div>
+</body>
+</html>
