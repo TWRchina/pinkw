@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PINKW的网站</title>
+    <link rel="shortcut icon" href="./234.jpg" type="image/x-icon" />
+    <p id="currentDateTime">加载中...</p>  
+  
+    <script>  
+        
+        function showCurrentDateTime() {  
+            const now = new Date();  
+            const year = now.getFullYear();  
+            const month = String(now.getMonth() + 1).padStart(2, '0'); // 月份是从0开始的，所以要+1  
+            const day = String(now.getDate()).padStart(2, '0');  
+            const hours = String(now.getHours()).padStart(2, '0');  
+            const minutes = String(now.getMinutes()).padStart(2, '0');  
+            const seconds = String(now.getSeconds()).padStart(2, '0');  
+            const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;  
+            document.getElementById('currentDateTime').textContent = formattedDateTime;  
+        }  
+  
+        // 初始显示当前日期和时间  
+        showCurrentDateTime();  
+  
+        // 每秒更新一次日期和时间  
+        setInterval(showCurrentDateTime, 1000);  
+        
+    </script>  <style>
+        .www{
+            text-align: center;
+        }
+        .box1{
+            background-color: rgba(0, 0, 0, 0.442);
+           
+        } 
+        .box2{
+            padding-left: 3cm;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:link{color: white;}
+        a:visited{color: white;}
+        a:hover{color: aqua;}
+        body {
+            background-image: url('./背景图.jpg');
+            background-repeat: no-repeat;
+            background-size: cover; /* 或者使用contain */
+            background-attachment: fixed; /* 背景图片固定，不随页面滚动 */
+        }
+    </style>
+    <script language=javascript>
+        function siteTime(){
+            window.setTimeout("siteTime()", 1000);
+            var seconds = 1000;
+            var minutes = seconds * 60;
+            var hours = minutes * 60;
+            var days = hours * 24;
+            var years = days * 365;
+            var today = new Date();
+            var todayYear = today.getFullYear();
+            var todayMonth = today.getMonth()+1;
+            var todayDate = today.getDate();
+            var todayHour = today.getHours();
+            var todayMinute = today.getMinutes();
+            var todaySecond = today.getSeconds();
+            /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+            year - 作为date对象的年份，为4位年份值
+            month - 0-11之间的整数，做为date对象的月份
+            day - 1-31之间的整数，做为date对象的天数
+            hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+            minutes - 0-59之间的整数，做为date对象的分钟数
+            seconds - 0-59之间的整数，做为date对象的秒数
+            microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+            var t1 = Date.UTC(2025,01,29,20,00,00); //北京时间2025-01-29 20:00:00创建网站的时间
+            var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+            var diff = t2-t1;
+            var diffYears = Math.floor(diff/years);
+            var diffDays = Math.floor((diff/days)-diffYears*365);
+            var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+            var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+            var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+            document.getElementById("sitetime").innerHTML=+diffYears+"年"+diffDays+"天"+diffHours+"时"+diffMinutes+"分钟"+diffSeconds+"秒";
+        }
+        siteTime();
+    </script>
+    
+</head>
+
+<body onload="startTime()">
+    <div>
+        <h4 style="color:blue;">所在地区路局</h4><img height="30" width="225" src="./img/成都.jpg"><!--<img width="50" height="50" src="./img/西南铁路.png">-->
+        
+    </div>
+    <div class="box1">
+        <div>
+            <h2 style="color: white;" >Welcome</h2>
+            <h2 style="color: white;">快捷导航></h2>
+        </div>
+        <span><div class="box2">
+            <a href="中国铁路.html"><span>| 中国铁路介绍 |</span></a>
+            <a href="中国国家铁路集团有限公司.html"target="_blank"><span>| 打开中国国家铁路集团官网 |</span></a>
+            <a href="中国铁路财产保险自保有限公司.html"target="_blank"><span>| 打开中国铁路财产保险自保有限公司官网 |</span></a>
+            <a href="http://www.95306.cn/" target="_blank"><span>| 打开95306官网 |</span></a>
+            <a href="https://www.12306.cn/index/" target="_blank"><span>| 打开铁路12306 |</span></a>
+           <!--<a href="制作信息.html"><span>| 制作信息 |</span></a>  -->              
+        </div></span>
+    </div>
+    <div class="box1">
+        <a href="./index.html"><h1 style="color:white;text-align: center;width: 500px;">PINKW的网站 |点击此处返回</h1></a>
+    </div>
+    <h2 style="text-align: center;color:orange">网站制作者：PINKW</h2>
+    <h2 style="text-align: center;color:orange">制作开始时间：2025年01月29日</h2>
+    <h2 style="text-align: center;color:orange">目前版本：1.0.0.0 BETA</h2>
+    <h2 style="text-align: center;color:orange">开源地址：https://github.com/TWRchina/pinkw/tree/BETA</h2>
+    <div class="www"><h3 style="text-align: center;color: white;">网站已安全运行</h3><span id="sitetime"  style="color:white;" ></span></div>
+    
+</body>
+</html>
