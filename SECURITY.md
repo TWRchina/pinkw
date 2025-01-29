@@ -18,6 +18,5 @@
 | ------- | ------------------ |
 | 微信公众号   | ❌ |
 |WIKI  | ❌ |
-| 版本下评论  | :white_check_mark: |
 | qq平台  | 开通中 |
-版本评论：https://github.com/TWRchina/pinkw/releases/tag/BETA
+|版本预览 |https://github.com/TWRchina/pinkw/releases/tag/BETA|
