@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网站介绍</title>
+    <link rel="stylesheet" href="styles.css"> <!-- 引入样式文件 -->
+    <style>
+        /* 全局样式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 导航栏 */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #005bb5;
+            color: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sidebar h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            margin: 0 10px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #0073e6;
+        }
+
+        /* 时间显示 */
+        #clock {
+            font-size: 14px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 5px;
+        }
+
+        /* 内容区域 */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 20px 20px; /* 上边距避免被导航栏遮挡 */
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: gold;
+            font-weight: bold;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .sidebar {
+                padding: 8px;
+            }
+
+            .sidebar h2 {
+                font-size: 18px;
+            }
+
+            .sidebar ul li a {
+                font-size: 14px;
+                padding: 6px;
+            }
+
+            #clock {
+                font-size: 12px;
+                padding: 4px 8px;
+            }
+
+            .container {
+                padding: 70px 10px 10px; /* 调整内容区域的上边距 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="sidebar">
+        <h2>欢迎</h2>
+        <ul>
+            <li><a href="index.html">主页</a></li>
+            <li><a href="密码验证.html">文件下载</a></li>
+            <li><a href="更新日志.html">更新日志</a></li>
+        </ul>
+        <!-- 时间显示 --><!--因为手机端问题弃用-->
+        <!--<div id="clock">
+            <span id="date">YYYY年MM月DD日</span>
+            <span id="time">HH:MM:SS</span>
+        </div>-->
+    </div>
+
+    <!-- 内容区域 -->
+    <div class="container">
+        <p>这是一个<span class="highlight">内容简单</span>的网站，可以在没有手机或者U盘时传输的网站</p>
+        <p>网站具有以下特点：</p>
+        <ul>
+            <li><span class="highlight">简洁直观</span>的界面设计，易于操作。</li>
+            <li><span class="highlight">丰富的内容</span>，可满足日常需要。</li>
+            <li><span class="highlight">响应式布局</span>，支持在手机、平板和电脑上流畅访问。</li>
+            <li><span class="highlight">多种多样的主题</span>，在不同大型节日会切换不同主题。</li>
+        </ul>
+        <p>只不过美中不足的是开发者是个高中生，经常忘掉更新，所以特此把每一行代码都注释了防止以后忘了代码的作用
+            如果你感兴趣的话可以查看网页源代码！（来自开发者PINKY的留言）
+        </p>
+    </div>
+
+    <!--<script>
+        // JavaScript 实现实时日期和时间
+        function updateDateTime() {
+            const now = new Date(); // 获取当前时间
+
+            // 格式化日期
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0'); // 月份从 0 开始，需要加 1
+            const day = String(now.getDate()).padStart(2, '0');
+            const dateString = `${year}年${month}月${day}日`;
+
+            // 格式化时间
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+
+            // 更新日期和时间显示
+            document.getElementById('date').textContent = dateString;
+            document.getElementById('time').textContent = timeString;
+        }
+
+        // 每秒更新一次日期和时间
+        setInterval(updateDateTime, 1000);
+        updateDateTime(); // 初始化日期和时间
+    </script>-->
+</body>
+</html>
